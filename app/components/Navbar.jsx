@@ -8,7 +8,6 @@ const links = [
 ];
 
 const Navbar = () => {
-  console.log('navbar');
   return (
     <nav className='bg-base-300'>
       <div className='navbar px-8 max-w-6xl mx-auto flex-col sm:flex-row'>

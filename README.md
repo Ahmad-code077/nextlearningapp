@@ -383,7 +383,6 @@ export default loading;
 
 ```js
 const fetchDrinks = async () => {
-  // just for demo purposes
   await new Promise((resolve) => setTimeout(resolve, 1000));
   const response = await fetch(url);
   const data = await response.json();
@@ -424,10 +423,9 @@ export default error;
 const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.phps?f=a';
 
 const fetchDrinks = async () => {
-  // just for demo purposes
   await new Promise((resolve) => setTimeout(resolve, 1000));
   const response = await fetch(url);
-  // throw error
+
   if (!response.ok) {
     throw new Error('Failed to fetch drinks...');
   }
