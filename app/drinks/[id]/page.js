@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import drinkImg from './drink.jpg';
 import Image from 'next/image';
 const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
 const fetchSingleDrink = async (id) => {
