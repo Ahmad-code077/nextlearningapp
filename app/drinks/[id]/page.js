@@ -1,7 +1,7 @@
 import Link from 'next/link';
-
+import drinkImg from './drink.jpg';
+import Image from 'next/image';
 const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
-
 const fetchSingleDrink = async (id) => {
   const resp = await fetch(`${url}${id}`);
   if (!resp.ok) {
@@ -20,7 +20,14 @@ const SinglePage = async ({ params }) => {
         Back Home
       </Link>
       <h1 className='text-xl'>{name}</h1>
-      <img src={image} alt={name} />
+      <Image
+        src={image}
+        width={300}
+        height={300}
+        priority
+        alt={name}
+        className='w-48 h-48 rounded'
+      />
     </div>
   );
 };
