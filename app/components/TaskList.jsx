@@ -1,13 +1,9 @@
-import prisma from '@/utils/db';
 import Link from 'next/link';
 import DeleteForm from './DeleteForm';
+import { allTasks } from '@/utils/actions';
 
 const TaskList = async () => {
-  const Tasks = await prisma.task.findMany({
-    orderBy: {
-      createdAt: 'desc',
-    },
-  });
+  const Tasks = await allTasks();
 
   if (Tasks.length <= 0) {
     return <h1 className='text-xl'> NO task Found </h1>;
