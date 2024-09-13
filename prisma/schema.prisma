@@ -18,4 +18,4 @@ model Task {
   content String
   createdAt DateTime @default(now())
   completed Boolean @default(false)
-}   
+}
