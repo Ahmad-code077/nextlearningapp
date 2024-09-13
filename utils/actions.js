@@ -1,6 +1,7 @@
 'use server';
 import prisma from '@/utils/db';
 import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
 
 export const allTasks = async () => {
   return prisma.task.findMany({
@@ -34,16 +35,16 @@ export const updateTask = async (fromData) => {
   const content = fromData.get('content');
   const completed = fromData.get('completed');
 
-  return prisma.task.update({
+  await prisma.task.update({
     where: {
       id,
     },
     data: {
       content,
-      completed: Boolean(completed),
+      completed: completed === 'on' ? true : false,
     },
   });
-  // revalidatePath('/tasks');
+  redirect('/tasks');
 };
 
 export const getCurrentState = async (id) => {
