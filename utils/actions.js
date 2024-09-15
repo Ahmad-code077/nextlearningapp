@@ -39,8 +39,7 @@ export const createTaskCustom = async (prevState, formData) => {
     revalidatePath('/tasks');
     return { message: 'success!!!' };
   } catch (error) {
-    // console.log(error.errors[0]?.message);
-    return { message: error.errors[0]?.message };
+    return { message: 'error' };
   }
 };
 export const deleteTask = async (fromData) => {
