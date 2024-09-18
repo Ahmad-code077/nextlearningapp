@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const DrinksList = ({ drinks }) => {
+  // all drinks list is here
   return (
     <ul className='grid sm:grid-cols-2 gap-6 mt-6'>
       {drinks.drinks.map((drink) => (

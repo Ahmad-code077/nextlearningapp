@@ -5,5 +5,5 @@ export function middleware(request) {
 }
 
 export const config = {
-  matcher: ['/client', '/drinks/:path*'],
+  matcher: ['/client'],
 };
